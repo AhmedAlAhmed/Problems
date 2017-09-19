@@ -43,13 +43,8 @@ void dfs(int u)
     num[u] = low[u] = cnt++;
     for(auto& v : adj[u])
     {
-
-
-
-
         if(! vis[v] )
         {
-
             P[v] = u;
             dfs(v);
 
@@ -63,13 +58,11 @@ void dfs(int u)
             }
             else
             {
-
                 if(! used[u][v] && !used[v][u])
                 {
                     cout << u << " " << v << endl;
                     used[u][v] = used[v][u] = 1;
                 }
-
             }
 
         }
@@ -82,7 +75,6 @@ void dfs(int u)
                 used[u][v] = used[v][u] = 1;
             }
         }
-
     }
 }
 
