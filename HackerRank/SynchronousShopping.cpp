@@ -39,7 +39,7 @@ using namespace std;
 
 
 
-const int MAXM = 1024, MAXN = 1010;
+const int MAXM = 1024 + 5, MAXN = 1000 + 20;
 int n,m,k;
 vector < pair< int, int > > adj[MAXN];
 int masks[MAXN];
