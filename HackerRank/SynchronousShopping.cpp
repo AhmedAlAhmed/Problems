@@ -39,7 +39,7 @@ using namespace std;
 
 
 
-const int MAXM = 1024, MAXN = 1010;
+const int MAXM = 1024 + 5, MAXN = 1000 + 20;
 int n,m,k;
 vector < pair< int, int > > adj[MAXN];
 int masks[MAXN];
@@ -76,12 +76,8 @@ int SynchronousShopping() {
 
 		for(auto& ni : adj[u]) {
 			int v = ni.F, w = ni.S;
-
 			int newmask = msk | masks[v];
-
-
 			if(dist[v][newmask] > dist[u][msk] + w) {
-
 				dist[v][newmask] = dist[u][msk] + w;
 				pq.push(Node(v, dist[v][newmask], newmask));
 			}
@@ -94,7 +90,6 @@ int SynchronousShopping() {
 			answer = min(answer, max(dist[n-1][i], dist[n-1][j]));
 		}
 	}
-
 	return answer;
 }
 
@@ -110,9 +105,7 @@ int main() {
 			si(x);
 			masks[i] |= (1<<(--x));
 		}
-
 	}
-
 	lp(i, m) {
 		si3(a,b,x);
 		a--;b--;
